@@ -1,0 +1,155 @@
+.game-container {
+  text-align: center;
+  margin-top: 50px;
+  background: lightblue;
+  height: 100vh;
+  width: 100vw;
+  margin:0px;
+  padding:0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.title {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+.stats-container {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.moves, .min-moves {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.min-moves {
+  background: rgba(76, 175, 80, 0.3);
+}
+.towers {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 60px;
+  width: 100%;
+  max-width: 900px;
+}
+.tower {
+  width: 120px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  justify-content: flex-end;
+}
+.tower:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+}
+.peg {
+  width: 12px;
+  height: 250px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+}
+.disk-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.disk {
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+  margin: 2px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  bottom: 0;
+}
+
+/* Different colors for different disk sizes */
+.disk[data-size="1"] {
+  width: 60px;
+  background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+}
+
+.disk[data-size="2"] {
+  width: 90px;
+  background: linear-gradient(45deg, #4ECDC4, #6EE7E0);
+}
+
+.disk[data-size="3"] {
+  width: 120px;
+  background: linear-gradient(45deg, #45B7D1, #65D7F1);
+}
+
+.disk:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.disk.selected {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.game-over {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 0, 0, 0.9);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+.restart-button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.restart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.restart-button:active {
+  transform: translateY(0);
+}
