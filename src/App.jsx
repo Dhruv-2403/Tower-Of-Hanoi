@@ -3,28 +3,28 @@ import Tower from './components/Tower';
 import './styles/TowerOfHanoi.css';
 
 function App() {
-  const initialTowers = {
+  const Towers = {
     A: [1, 2, 3],  // Smallest (1) on top, largest (3) on bottom
     B: [],
     C: []
   };
 
-  const [towers, setTowers] = useState(initialTowers);
+  const [towers, setTowers] = useState(Towers);
   const [selectedDisk, setSelectedDisk] = useState(null);
   const [sourceTower, setSourceTower] = useState(null);
   const [moves, setMoves] = useState(0);
-  const [minMoves] = useState(Math.pow(2, initialTowers.A.length) - 1);
+  const [minMoves] = useState(Math.pow(2, Towers.A.length) - 1);
   const [gameOver, setGameOver] = useState(false);
   const [gameWon, setGameWon] = useState(false);
 
   useEffect(() => {
-    // Check for win condition
+  
     if (towers.C.length === 3) {
       setGameWon(true);
       setGameOver(true);
       alert(`Congratulations! You won in ${moves} moves! The minimum required moves were ${minMoves}.`);
     }
-    // Check for game over (too many moves)
+
     else if (moves > minMoves && !gameOver) {
       setGameOver(true);
       alert(`Game Over! You took ${moves} moves. The minimum required moves were ${minMoves}.`);
