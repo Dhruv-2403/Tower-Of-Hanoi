@@ -89,7 +89,7 @@
   bottom: 0;
 }
 
-/* Different colors for different disk sizes */
+
 .disk[data-size="1"] {
   width: 60px;
   background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
